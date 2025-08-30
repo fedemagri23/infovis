@@ -1,31 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MI año en Spotify</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mi año en Spotify - Spotify Wrapped Style</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   </head>
   <body>
+    <!-- Partículas decorativas -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+
     <header>
       <h1>🎧 Mi año en Spotify</h1>
     </header>
 
     <main>
-      <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/24614124">
-        <script src="https://public.flourish.studio/resources/embed.js"></script>
-        <noscript>
-          <img src="https://public.flourish.studio/visualisation/24614124/thumbnail" 
-               width="100%" 
-               alt="bar-chart-race visualization" />
-        </noscript>
-      </div>  
+      <div class="charts-container">
+        <!-- Panel izquierdo - Bar Chart Race -->
+        <div class="chart-panel left">
+          <h2 class="chart-title">¿Cuántas veces escuché cada canción a lo largo del tiempo?</h2>
+          <div class="chart-content">
+            <div
+              class="flourish-embed flourish-bar-chart-race"
+              data-src="visualisation/24614124"
+            >
+              <script src="https://public.flourish.studio/resources/embed.js"></script>
+              <noscript>
+                <img
+                  src="https://public.flourish.studio/visualisation/24614124/thumbnail"
+                  width="100%"
+                  alt="bar-chart-race visualization"
+                />
+              </noscript>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: var(--lime-green);">
+            Source: Spotify
+          </div>
+        </div>
+
+        <!-- Panel derecho - Tableau -->
+        <div class="chart-panel right">
+          <h2 class="chart-title">¿Cómo evolucionaron mis reproducciones entre las 10 canciones que más escuché?</h2>
+          <div class="chart-content">
+            <div
+              class="tableauPlaceholder"
+              id="viz1756576852947"
+            >
+              <noscript
+                ><a href="#"
+                  ><img
+                    alt="Hoja 1 "
+                    src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sp&#47;Spotipy-InfoVis&#47;Hoja1&#47;1_rss.png"
+                    style="border: none" /></a></noscript
+              ><object class="tableauViz" style="display: none">
+                <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+                <param name="embed_code_version" value="3" />
+                <param name="site_root" value="" />
+                <param name="name" value="Spotipy-InfoVis&#47;Hoja1" />
+                <param name="tabs" value="no" />
+                <param name="toolbar" value="yes" />
+                <param
+                  name="static_image"
+                  value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sp&#47;Spotipy-InfoVis&#47;Hoja1&#47;1.png"
+                />
+                <param name="animate_transition" value="yes" />
+                <param name="display_static_image" value="yes" />
+                <param name="display_spinner" value="yes" />
+                <param name="display_overlay" value="yes" />
+                <param name="display_count" value="yes" />
+                <param name="language" value="es-ES" />
+              </object>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: var(--bright-purple);">
+            Ver en Tableau Public
+          </div>
+        </div>
+      </div>
+
+      <!-- Información adicional -->
+      <div class="info-section">
+        <h3>🎵 Datos de tu año musical</h3>
+        <p>
+          Descubre cómo evolucionaron tus gustos musicales a lo largo del año. 
+          Desde las canciones que más escuchaste hasta cómo cambiaron tus preferencias mes a mes.
+        </p>
+      </div>
+
+      <script type="text/javascript">
+        var divElement = document.getElementById("viz1756576852947");
+        var vizElement = divElement.getElementsByTagName("object")[0];
+        vizElement.style.width = "100%";
+        vizElement.style.height = "100%";
+        var scriptElement = document.createElement("script");
+        scriptElement.src =
+          "https://public.tableau.com/javascripts/api/viz_v1.js";
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
+      
+      <!-- Script para efectos Spotify Wrapped -->
+      <script src="script.js"></script>
     </main>
 
     <footer>
-      <p>✨ Trabajo Práctico – Visualización de Datos Personales | Federico Magri</p>
+      <p>
+        ✨ Trabajo Práctico – Visualización de Datos Personales | Federico Magri
+      </p>
     </footer>
   </body>
 </html>
