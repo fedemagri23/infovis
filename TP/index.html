@@ -22,10 +22,10 @@
       <div class="charts-container">
         <!-- Panel izquierdo - Bar Chart Race -->
         <div class="chart-panel left">
-          <h2 class="chart-title">¿Cuántas veces escuché cada canción a lo largo del tiempo?</h2>
+          <h2 class="chart-title">Flourish Chart</h2>
           <div class="chart-content">
             <div
-              class="flourish-embed flourish-bar-chart-race"
+              class="flourish-embed flourish-bar-chart-race" style="background-color: #1DB954;"
               data-src="visualisation/24614124"
             >
               <script src="https://public.flourish.studio/resources/embed.js"></script>
@@ -38,49 +38,67 @@
               </noscript>
             </div>
           </div>
-          <div style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: var(--lime-green);">
-            Source: Spotify
-          </div>
         </div>
 
         <!-- Panel derecho - Tableau -->
         <div class="chart-panel right">
-          <h2 class="chart-title">¿Cómo evolucionaron mis reproducciones entre las 10 canciones que más escuché?</h2>
-          <div class="chart-content">
-            <div
-              class="tableauPlaceholder"
-              id="viz1756579598692"
-              style="position: relative"
+          <h2 class="chart-title">Tableau Chart</h2>
+          <div class="chart-content" style="background-color: #8B5CF6;">
+            <div 
+              class='tableauPlaceholder' 
+              id='viz1756585910898' 
+              style="
+              position: relative;
+              background-color: #8B5CF6;
+              "
             >
-              <noscript
-                ><a href="#"
-                  ><img
-                    alt="¿Como evolucionaron mis reproducciones entre las 10 canciones que más escuché? "
-                    src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;os&#47;oscuro&#47;Hoja1&#47;1_rss.png"
-                    style="border: none" /></a></noscript
-              ><object class="tableauViz" style="display:none;">
-                <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
-                <param name="embed_code_version" value="3" />
-                <param name="site_root" value="" />
-                <param name="name" value="oscuro&#47;Hoja1" />
-                <param name="tabs" value="no" />
-                <param name="toolbar" value="yes" />
-                <param
-                  name="static_image"
-                  value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;os&#47;oscuro&#47;Hoja1&#47;1.png"
+              <noscript>
+                <a href='#'>
+                  <img 
+                    alt='¿Como evolucionaron mis reproducciones entre las 10 canciones que más escuché? ' 
+                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;os&#47;oscuro&#47;Hoja1&#47;1_rss.png' 
+                    style='border: none' />
+                </a>
+              </noscript>
+              <object 
+                class='tableauViz'  
+                style='display:none;'
+              >
+                <param 
+                  name='host_url' 
+                  value='https%3A%2F%2Fpublic.tableau.com%2F' 
+                /> 
+                <param 
+                  name='embed_code_version' 
+                  value='3' 
+                /> 
+                <param 
+                  name='site_root' 
+                  value='' 
                 />
-                <param name="animate_transition" value="yes" />
-                <param name="display_static_image" value="yes" />
-                <param name="display_spinner" value="yes" />
-                <param name="display_overlay" value="yes" />
-                <param name="display_count" value="yes" />
-                <param name="language" value="es-ES" />
+                <param 
+                  name='name' 
+                  value='oscuro&#47;Hoja1' 
+                />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;os&#47;oscuro&#47;Hoja1&#47;1.png' /> 
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='es-ES' />
               </object>
-            </div>
-          </div>
-          <div style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: var(--bright-purple);">
-            Ver en Tableau Public
-          </div>
+          </div>                
+          <script type='text/javascript'>                    
+            var divElement = document.getElementById('viz1756585910898');                    
+            var vizElement = divElement.getElementsByTagName('object')[0];                    
+            vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
+            var scriptElement = document.createElement('script');                    
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+          </script>
         </div>
       </div>
 
@@ -94,10 +112,10 @@
       </div>
 
       <script type="text/javascript">
-        var divElement = document.getElementById("viz1756579598692");
+        var divElement = document.getElementById("viz1756576852947");
         var vizElement = divElement.getElementsByTagName("object")[0];
         vizElement.style.width = "100%";
-        vizElement.style.height = (divElement.offsetWidth * 0.75) + "px";
+        vizElement.style.height = "100%";
         var scriptElement = document.createElement("script");
         scriptElement.src =
           "https://public.tableau.com/javascripts/api/viz_v1.js";
