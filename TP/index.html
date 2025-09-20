@@ -20,7 +20,7 @@
 
     <main>
       <div class="charts-container">
-        <!-- Panel izquierdo - Bar Chart Race -->
+        <!-- Panel - Bar Chart Race -->
         <div class="chart-panel left">
           <h2 class="chart-title">Flourish Chart</h2>
           <div class="chart-content">
@@ -40,7 +40,7 @@
           </div>
         </div>
 
-        <!-- Panel derecho - Tableau -->
+        <!-- Panel - Tableau -->
         <div class="chart-panel right">
           <h2 class="chart-title">Tableau Chart</h2>
           <div class="chart-content" style="background-color: #8B5CF6;">
@@ -81,6 +81,29 @@
                   vizElement.parentNode.insertBefore(scriptElement, vizElement);                
                 </script>                
               </div>
+        </div>
+
+        <!-- Panel tercero - RawGraphs -->
+        <div class="chart-panel center">
+          <h2 class="chart-title">Rawgraphs Chart</h2>
+          <h2 class="chart-title" style="color: white;">¿Qué géneros escuché más minutos?</h2>
+          <div class="chart-content">
+            <div class="rawgraphs-container">
+              <img src="rawgraphs.svg" alt="Treemap de géneros musicales" class="rawgraphs-svg" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel cuarto - DataWrapper -->
+        <div class="chart-panel datawrapper">
+          <h2 class="chart-title">DataWrapper Chart</h2>
+          <div class="chart-content">
+            <h3 class="chart-subtitle">¿Qué artistas escuché más veces? - Top 40</h3>
+            <div class="datawrapper-container">
+              <iframe title="¿Qué artistas escuché más veces? - Top 40" aria-label="Bar Chart" id="datawrapper-chart-GZPUT" src="https://datawrapper.dwcdn.net/GZPUT/5/" scrolling="no" frameborder="0" style="width: 100%; border: none;" height="981" data-external="1"></iframe>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Información adicional -->
@@ -105,6 +128,9 @@
       
       <!-- Script para efectos Spotify Wrapped -->
       <script src="script.js"></script>
+      
+      <!-- Script para DataWrapper -->
+      <script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}})}();</script>
     </main>
 
     <footer>

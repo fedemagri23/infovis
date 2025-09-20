@@ -125,7 +125,7 @@ main {
 /* Container de gráficos con estilo Spotify Wrapped */
 .charts-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
   margin-bottom: 2rem;
   background-color: #000000;
@@ -199,6 +199,12 @@ main {
   background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(0, 0, 0, 0.8) 100%);
 }
 
+/* Panel central - RawGraphs */
+.chart-panel.center {
+  border-color: var(--lime-green);
+  background: linear-gradient(135deg, rgba(29, 185, 84, 0.05) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
 .chart-panel.right::before {
   content: '';
   position: absolute;
@@ -214,6 +220,50 @@ main {
 }
 
 .chart-panel.right:hover::before {
+  transform: scale(1.3);
+  opacity: 0.2;
+}
+
+.chart-panel.center::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 90px;
+  height: 90px;
+  background: var(--lime-green);
+  border-radius: 50%;
+  opacity: 0.1;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.chart-panel.center:hover::before {
+  transform: scale(1.3);
+  opacity: 0.2;
+}
+
+/* Panel DataWrapper */
+.chart-panel.datawrapper {
+  border-color: var(--bright-orange);
+  background: linear-gradient(135deg, rgba(255, 138, 0, 0.05) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.chart-panel.datawrapper::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 85px;
+  height: 85px;
+  background: var(--bright-orange);
+  border-radius: 50%;
+  opacity: 0.1;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.chart-panel.datawrapper:hover::before {
   transform: scale(1.3);
   opacity: 0.2;
 }
@@ -238,24 +288,78 @@ main {
   color: var(--bright-purple);
 }
 
+.chart-panel.center .chart-title {
+  color: var(--lime-green);
+}
+
+.chart-panel.datawrapper .chart-title {
+  color: var(--bright-orange);
+}
+
+/* Subtítulo del gráfico */
+.chart-subtitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
+  color: var(--spotify-white);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  padding: 0.25rem 1rem 0 1rem;
+}
+
 .chart-panel:hover .chart-title {
   transform: scale(1.05);
+}
+
+.chart-panel:hover .chart-subtitle {
+  transform: scale(1.02);
+  color: var(--lime-green);
+}
+
+.chart-panel.datawrapper:hover .chart-subtitle {
+  color: var(--bright-orange);
 }
 
 /* Contenedor del gráfico */
 .chart-content {
   position: relative;
   z-index: 2;
-  height: 500px;
+  height: 700px;
   border-radius: 16px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.95);
   transition: all 0.3s ease;
 }
 
+/* Contenedor del gráfico específico para RawGraphs */
+.chart-panel.center .chart-content {
+  background: transparent;
+  height: calc(100% - 5rem);
+}
+
+/* Contenedor del gráfico específico para DataWrapper */
+.chart-panel.datawrapper .chart-content {
+  background: transparent;
+  height: calc(100% - 1rem);
+  padding: 0.5rem;
+}
+
 .chart-panel:hover .chart-content {
   background: rgba(255, 255, 255, 1);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.chart-panel.center:hover .chart-content {
+  background: transparent;
+  box-shadow: 0 0 30px rgba(29, 185, 84, 0.3);
+}
+
+.chart-panel.datawrapper:hover .chart-content {
+  background: transparent;
+  box-shadow: 0 0 30px rgba(255, 138, 0, 0.3);
 }
 
 /* Estilos específicos para Flourish */
@@ -272,6 +376,57 @@ main {
   height: 100%;
   border-radius: 16px;
   overflow: hidden;
+}
+
+/* Estilos específicos para RawGraphs */
+.rawgraphs-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.rawgraphs-svg {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  object-fit: contain;
+}
+
+.chart-panel:hover .rawgraphs-svg {
+  transform: scale(1.02);
+}
+
+/* Estilos específicos para DataWrapper */
+.datawrapper-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+.datawrapper-container iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.chart-panel:hover .datawrapper-container iframe {
+  transform: scale(1.01);
 }
 
 /* Footer con estilo Spotify Wrapped */
@@ -314,7 +469,7 @@ footer p {
   }
   
   .chart-content {
-    height: 400px;
+    height: 600px;
   }
 }
 
@@ -332,7 +487,7 @@ footer p {
   }
   
   .chart-content {
-    height: 350px;
+    height: 500px;
   }
 }
 
